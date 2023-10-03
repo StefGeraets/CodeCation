@@ -1,0 +1,18 @@
+@import url('_reset.scss');
+
+:root {
+	--text: #e5dbed;
+	--background: #050209;
+	--primary: #64aa22;
+	--secondary: #082608;
+	--accent: #ced129;
+	--muted: rgba(255, 255, 255, 0.025);
+	--muted1: rgba(255, 255, 255, 0.05);
+	--muted2: rgba(255, 255, 255, 0.1);
+}
+
+body {
+	font-size: 1rem;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
