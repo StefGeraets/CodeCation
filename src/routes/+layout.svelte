@@ -18,11 +18,11 @@
     color: var(--text);
     padding-top: 100px;
     padding-bottom: 80px;
+    box-sizing: border-box;
   }
 
   .container {
     width: min(80vw, 1536px);
-    min-height: 100dvh;
     margin: 0 auto;
   }
 </style>

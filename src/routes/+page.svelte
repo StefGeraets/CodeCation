@@ -9,7 +9,7 @@
 <style lang="scss">
   section {
     display: flex;
-    min-height: 100vh;
+    min-height: 75vh;
     align-items: center;
     justify-content: center;
   }

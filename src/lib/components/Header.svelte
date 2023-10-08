@@ -30,6 +30,10 @@
     font-weight: 900;
     font-size: 2rem;
     color: var(--accent);
+    background: linear-gradient(120deg,var(--primary),var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   nav {

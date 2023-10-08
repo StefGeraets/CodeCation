@@ -3,8 +3,11 @@
 </script>
 
 <article>
-  <h1>{data.post.title}</h1>
-  <div>{@html data.post.content}</div>
+  <h1>{data.meta.title}</h1>
+  <img src={data.meta.mainImage} alt="mainImage" />
+
+  <svelte:component this={data.content} />
+  
 </article>
 
 <style lang="scss">
