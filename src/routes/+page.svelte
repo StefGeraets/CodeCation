@@ -17,7 +17,7 @@
   h1 {
     text-align: center;
     color: var(--text);
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: 700;
     line-height: 0.9;
 
@@ -26,6 +26,7 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: var(--accent) 0 0 100px;
     }
   }
 </style>

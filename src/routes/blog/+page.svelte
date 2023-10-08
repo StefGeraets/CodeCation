@@ -97,20 +97,20 @@
       }
 
       img {
-        aspect-ratio: 16/6;
+        aspect-ratio: 16/8;
         object-fit: cover;
         border-radius: 12px 12px 0 0;
       }
 
       span {
         display: block;;
-        font-size: 0.75rem;
+        font-size: 1rem;
         color: var(--accent);
         margin-top: 0.75rem;
         padding-bottom: 0.5rem;
       }
       h3 {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 1rem;
       }
