@@ -1,20 +1,41 @@
 <script lang="ts">
+  import {Categories} from "$lib/constants";
+	import type { Categories as CategoryType } from "$lib/types.js";
+
   export let data;
+
+  let selectedCategory: string = 'all';
+
+  const filterPosts = (category: string) => {
+    selectedCategory = category;
+  };
+
+  $: filteredPosts = selectedCategory === 'all' 
+    ? data.posts 
+    : data.posts.filter((post) => post.categories.includes(selectedCategory as CategoryType))
 </script>
 
 <section>
   <div class="filter-section">
     <h4>All blog posts</h4>
     <div>
-      <button>All</button>
-      <button>Javascript</button>
-      <button>CSS</button>
-      <button>Frameworks</button>
-      <button>UI/UX</button>
+      <button 
+        on:click={() => filterPosts('all')} 
+        class:active={selectedCategory === 'all'}>
+        All
+      </button>
+      {#each Categories as category }
+        <button 
+          on:click={() => filterPosts(category)} 
+          class:active={selectedCategory === category}>
+            {category}
+        </button>
+      {/each}
     </div>
   </div>
+
   <div class="grid">
-    {#each data.posts as {slug, title, thumbnail, date}}
+    {#each filteredPosts as {slug, title, thumbnail, date}}
       <a href="/blog/{slug}" class="card">
         <img src={thumbnail} alt="{title} image" />
         <span>{new Date(date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</span>
@@ -45,8 +66,14 @@
         text-transform: uppercase;
         color: var(--text-muted);
 
-        &:hover {
+        &:hover,
+        &.active:hover {
           color: var(--primary);
+          background: var(--muted1);
+        }
+
+        &.active {
+          color: var(--accent);
           background: var(--muted1);
         }
       }
