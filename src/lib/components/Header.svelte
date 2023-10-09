@@ -1,10 +1,9 @@
 <header>
-  <div class="logo">CodeCation</div>
+  <a href="/" class="logo">CodeCation</a>
   <nav>
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
-    <a href="/">Movies</a>
-    <a href="/">About</a>
+    <a href="/about">About</a>
   </nav>
 </header>
 

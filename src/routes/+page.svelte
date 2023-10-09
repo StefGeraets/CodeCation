@@ -18,7 +18,7 @@
     text-align: center;
     color: var(--text);
     font-size: 8rem;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 0.9;
 
     span {

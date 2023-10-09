@@ -1,0 +1,57 @@
+.content {
+	font-size: clamp(1.1em, calc(0.5em + 1vw), 3em);
+	line-height: 1.42;
+	max-width: 40em;
+	margin: 0 auto;
+
+	h1 {
+		font-size: 3em;
+		margin-top: 0.67em;
+		margin-bottom: 0.67em;
+		font-weight: 900;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin-top: 5rem;
+		border-bottom: 1px solid var(--muted3);
+		margin-bottom: 0.85em;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 1.6em;
+		margin-top: 3rem;
+		border-bottom: 1px solid var(--muted2);
+		margin-bottom: 0.7em;
+		font-weight: 500;
+	}
+
+	p {
+		margin-bottom: 1em;
+
+		&.lead {
+			font-size: 1.2em;
+		}
+	}
+
+	a {
+		color: var(--primary);
+		cursor: pointer;
+		border-bottom: 4px solid var(--muted);
+
+		&:hover {
+			color: var(--accent);
+			border-bottom: 4px solid var(--accent);
+		}
+
+		&[target='_blank']:after {
+			content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-external-link' width='20' height='20' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' style='color: rgba(255,255,255,0.5)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 0h24v24H0z' stroke='none'/%3E%3Cpath d='M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M11 13l9-9M15 4h5v5'/%3E%3C/svg%3E");
+			margin-left: 0.15em;
+		}
+	}
+
+	img {
+		margin-bottom: 1em;
+	}
+}

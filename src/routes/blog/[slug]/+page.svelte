@@ -3,7 +3,7 @@
 </script>
 
 <header>
-  <div class="content">
+  <div class="intro">
     <a href="/blog"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M15 6l-6 6l6 6"></path>
@@ -32,7 +32,7 @@
     padding: 0 20px 20px;
     position: relative;
 
-    .content {
+    .intro {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
