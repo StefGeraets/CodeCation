@@ -28,6 +28,7 @@
     border-bottom: 1px solid var(--background);
     background: rgb(17,15,21);
     z-index: 9;
+    view-transition-name: header;
   }
   
   .logo {
