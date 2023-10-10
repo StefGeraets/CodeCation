@@ -1,10 +1,11 @@
 <script lang="ts">
   const sentences = [
-    "Let's bring some <span>native</span> movement to the web",
-    "Harness innovation to <span>revolutionize</span> user interactions on the web",
+    "Let's bring some <br/><span>native</span> movement <br/>to the web",
+    "Harness innovation to <span>revolutionize</span> <br/>user interactions <br/>on the web",
     "Infuse your websites with the allure of <span>intuitive</span> navigation.",
     "Hi <span>Mom</span> 👋",
-    "A bit of <span>hangover</span> from yesterday",
+    "A bit of a <span>hangover</span> from yesterday",
+    "You wanna <br/>keep <span>clicking?</span><br/> Go your gang!"
   ]
   let h1: HTMLHeadingElement;
   let index = 0;
