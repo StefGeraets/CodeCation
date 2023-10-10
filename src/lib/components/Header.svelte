@@ -1,9 +1,17 @@
+<script lang="ts">
+  import { page } from "$app/stores";
+  let path: string;
+
+  console.log("url", $page);
+  $: path = $page.url.pathname;
+</script>
+
 <header>
   <a href="/" class="logo">CodeCation</a>
   <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/about">About</a>
+    <a href="/" class:active={path === "/"}>Home</a>
+    <a href="/blog" class:active={path.startsWith("/blog")}>Blog</a>
+    <a href="/about" class:active={path === "/about"}>About</a>
   </nav>
 </header>
 
@@ -45,6 +53,10 @@
 
       &:hover {
         opacity: 0.8;
+      }
+
+      &.active {
+        color: var(--accent);
       }
     }
   }
