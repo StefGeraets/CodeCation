@@ -14,6 +14,7 @@
 	--muted2: rgba(255, 255, 255, 0.1);
 	--muted3: rgba(255, 255, 255, 0.25);
 	--dimmed: rgba(0, 0, 0, 0.75);
+	view-transition-name: none;
 }
 html {
 	background-color: var(--background);

@@ -16,7 +16,7 @@
     </ul>
     <p class="lead">{data.meta.excerpt}</p>
   </div>
-  <img src={data.meta.mainImage} alt="mainImage" />
+  <img src={data.meta.mainImage} alt="mainImage" style:view-transition-name="img-{data.slug}" />
 </header>
 <article class="prose">
   <svelte:component this={data.content} />

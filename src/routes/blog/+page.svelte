@@ -1,13 +1,24 @@
 <script lang="ts">
   import {Categories} from "$lib/constants";
 	import type { Categories as CategoryType } from "$lib/types.js";
+	import { tick } from "svelte";
 
   export let data;
 
   let selectedCategory: string = 'all';
 
   const filterPosts = (category: string) => {
-    selectedCategory = category;
+    if (!document.startViewTransition) {
+      selectedCategory = category;
+      return
+    };
+    
+    return new Promise(() => {
+      document.startViewTransition(async () => {
+        tick();
+        selectedCategory = category;
+      });
+    });
   };
 
   $: filteredPosts = selectedCategory === 'all' 
@@ -36,8 +47,8 @@
 
   <div class="grid">
     {#each filteredPosts as {slug, title, thumbnail, date}}
-      <a href="/blog/{slug}" class="card post-{slug}">
-        <img src={thumbnail} alt="{title} image" />
+      <a href="/blog/{slug}" class="card post-{slug}" style:view-transition-name="post-{slug}">
+        <img src={thumbnail} alt="{title} image" style:view-transition-name="img-{slug}" />
         <span>{new Date(date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</span>
         <h3>{title}</h3>
       </a>
@@ -48,6 +59,7 @@
 <style lang="scss">
   .filter-section {
     margin: 4rem 0;
+    view-transition-name: filter;
     h4 {
       font-size: 1.65rem;
       font-weight: bold;
@@ -115,6 +127,36 @@
         margin-bottom: 1rem;
       }
 
+    }
+  }
+
+  :global(html)::view-transition-group(*):only-child {
+    animation-duration: 3s;
+    mix-blend-mode: normal;
+  }
+
+  :global(html)::view-transition-new(*):only-child {
+    animation-name: fade-in;
+  }
+
+  :global(html)::view-transition-old(*):only-child {
+    animation-name: scale-out;
+  }
+  @keyframes scale-out {
+    to {
+      scale: 0;
+      opacity: 0;
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      scale: 0;
+    }
+
+    to {
+      scale: 1;
     }
   }
 </style>
