@@ -33,9 +33,9 @@
 
 <style lang="scss">
 
-  :global(html)::view-transition-group(*) { 
-    animation-duration: 2s;
-  }
+  // :global(html)::view-transition-group(*) { 
+  //   animation-duration: 2s;
+  // }
 
   section {
     display: flex;
