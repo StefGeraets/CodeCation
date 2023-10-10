@@ -11,7 +11,15 @@
   let index = 0;
 
   const nextSentence = () => {
-    index = ++index % sentences.length;
+    if(!document.startViewTransition) {
+      index = ++index % sentences.length;
+      return;
+    }
+    
+    // @ts-expect-error
+    document.startViewTransition(() => {
+      index = ++index % sentences.length;
+    })
   }
 </script>
 
@@ -24,6 +32,11 @@
 </section>
 
 <style lang="scss">
+
+  :global(html)::view-transition-group(*) { 
+    animation-duration: 2s;
+  }
+
   section {
     display: flex;
     min-height: 75vh;
