@@ -2,7 +2,6 @@
   import { page } from "$app/stores";
   let path: string;
 
-  console.log("url", $page);
   $: path = $page.url.pathname;
 </script>
 
