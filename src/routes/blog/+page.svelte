@@ -36,7 +36,7 @@
 
   <div class="grid">
     {#each filteredPosts as {slug, title, thumbnail, date}}
-      <a href="/blog/{slug}" class="card">
+      <a href="/blog/{slug}" class="card post-{slug}">
         <img src={thumbnail} alt="{title} image" />
         <span>{new Date(date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</span>
         <h3>{title}</h3>
