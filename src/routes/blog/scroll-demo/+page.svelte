@@ -3,7 +3,7 @@
   <h1>Virtual Reality</h1>
   <p>Virtual reality (VR) is a simulated experience that employs pose tracking and 3D near-eye displays to give the user an immersive feel of a virtual world. Applications of virtual reality include entertainment (particularly video games), education (such as medical or military training) and business (such as virtual meetings). Other distinct types of VR-style technology include augmented reality and mixed reality, sometimes referred to as extended reality or XR, although definitions are currently changing due to the nascence of the industry.</p>
   <p>Currently, standard virtual reality systems use either virtual reality headsets or multi-projected environments to generate some realistic images, sounds and other sensations that simulate a user's physical presence in a virtual environment. A person using virtual reality equipment is able to look around the artificial world, move around in it, and interact with virtual features or items. The effect is commonly created by VR headsets consisting of a head-mounted display with a small screen in front of the eyes, but can also be created through specially designed rooms with multiple large screens. Virtual reality typically incorporates auditory and video feedback, but may also allow other types of sensory and force feedback through haptic technology.</p>
-  <img src="/images/vr/post-1.jpg" alt="Some dude with VR" />
+  <img src="/images/vr/post-1.jpg" alt="Some dude with VR" class="reveal-image" />
 
   <h2>Etymology</h2>
   <p>"Virtual" has had the meaning of "being something in essence or effect, though not actually or in fact" since the mid-1400s. The term "virtual" has been used in the computer sense of "not physically existing but made to appear by software" since 1959.</p>
@@ -22,7 +22,7 @@
 
   <h2>Technology</h2>
   <p>Modern virtual reality headset displays are based on technology developed for smartphones including: gyroscopes and motion sensors for tracking head, body, and hand positions; small HD screens for stereoscopic displays; and small, lightweight and fast computer processors. These components led to relative affordability for independent VR developers, and led to the 2012 Oculus Rift Kickstarter offering the first independently developed VR headset.[52]</p>
-  <img src="/images/vr/post-2.jpg" alt="Happy with VR" />
+  <img src="/images/vr/post-2.jpg" alt="Happy with VR" class="reveal-image" />
   <p>Independent production of VR images and video has increased alongside the development of affordable omnidirectional cameras, also known as 360-degree cameras or VR cameras, that have the ability to record 360 interactive photography, although at relatively low resolutions or in highly compressed formats for online streaming of 360 video.[66] In contrast, photogrammetry is increasingly used to combine several high-resolution photographs for the creation of detailed 3D objects and environments in VR applications.[67][68]</p>
   <p>To create a feeling of immersion, special output devices are needed to display virtual worlds. Well-known formats include head-mounted displays or the CAVE. In order to convey a spatial impression, two images are generated and displayed from different perspectives (stereo projection). There are different technologies available to bring the respective image to the right eye. A distinction is made between active (e.g. shutter glasses) and passive technologies (e.g. polarizing filters or Infitec).[69]</p>
 
@@ -82,5 +82,37 @@
     transform-origin: 0 50%;
     animation: grow-progress auto linear;
     animation-timeline: --page-scroll;
+  }
+
+  // .reveal-image {
+  //   view-timeline-name: --reveal;
+  //   // view-timeline-axis: block;
+
+  //   animation: image-reveal linear both;
+  //   animation-timeline: --reveal;
+    
+  //   animation-range: entry 25% cover 40%;
+  // }
+  
+  // @keyframes image-reveal {
+  //   from {clip-path: inset(0% 50%); transform: translateY(100%);}
+  //   to {clip-path: inset(0% 0%); transform: translateY(0);}
+  // }
+  
+  .reveal-image {
+    animation: animate-in linear forwards, animate-out linear forwards;
+    animation-timeline: view();
+    
+    animation-range: entry, exit;
+  }
+
+  @keyframes animate-in {
+    0% {transform: translateY(100%); opacity: 0;}
+    100% { transform: translateY(0); opacity: 1;}
+  }
+
+  @keyframes animate-out {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-100%); opacity: 0;}
   }
 </style>
