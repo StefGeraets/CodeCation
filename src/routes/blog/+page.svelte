@@ -48,9 +48,9 @@
   <div class="grid">
     {#each filteredPosts as {slug, title, thumbnail, date}}
       <a href="/blog/{slug}" class="card post-{slug}" style:view-transition-name="post-{slug}">
-        <img src={thumbnail} alt="{title} image" />
+        <img src={thumbnail} alt="{title} image" style:view-transition-name="img-{slug}" />
         <span>{new Date(date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</span>
-        <h3>{title}</h3>
+        <h3 style:view-transition-name="title-{slug}">{title}</h3>
       </a>
     {/each}
   </div>

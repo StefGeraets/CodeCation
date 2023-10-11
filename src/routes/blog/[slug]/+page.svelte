@@ -9,14 +9,14 @@
       <path d="M15 6l-6 6l6 6"></path>
    </svg> Back to overview</a>
     <p class="date">{new Date(data.meta.date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</p>
-    <h1>{data.meta.title}</h1>
+    <h1 style:view-transition-name="title-{data.slug}">{data.meta.title}</h1>
     <ul>
       <li>Text by Futurama &amp; ChatGPT</li>
       <li>Photo by Pexels</li>
     </ul>
     <p class="lead">{data.meta.excerpt}</p>
   </div>
-  <img src={data.meta.mainImage} alt="mainImage" />
+  <img src={data.meta.mainImage} alt="mainImage" style:view-transition-name="img-{data.slug}" />
 </header>
 <article class="prose">
   <svelte:component this={data.content} />
