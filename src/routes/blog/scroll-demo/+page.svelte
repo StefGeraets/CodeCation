@@ -1,3 +1,4 @@
+<div id="progress"></div>
 <article class="content">
   <h1>Virtual Reality</h1>
   <p>Virtual reality (VR) is a simulated experience that employs pose tracking and 3D near-eye displays to give the user an immersive feel of a virtual world. Applications of virtual reality include entertainment (particularly video games), education (such as medical or military training) and business (such as virtual meetings). Other distinct types of VR-style technology include augmented reality and mixed reality, sometimes referred to as extended reality or XR, although definitions are currently changing due to the nascence of the industry.</p>
@@ -43,5 +44,25 @@
         object-fit: cover;
       }
     }
+  }
+
+  @keyframes grow-progress {
+    from { transform: scaleX(0)}
+    to { transform: scaleX(1)}
+  }
+
+  :global(html) {
+    scroll-timeline: --page-scroll block;
+  }
+  #progress {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 5px;
+    background: var(--accent);
+    z-index: 10;
+
+    transform-origin: 0 50%;
+    animation: grow-progress auto linear;
+    animation-timeline: --page-scroll;
   }
 </style>
