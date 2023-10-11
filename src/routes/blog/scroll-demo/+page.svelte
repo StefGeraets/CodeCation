@@ -8,8 +8,9 @@
   <h2>Etymology</h2>
   <p>"Virtual" has had the meaning of "being something in essence or effect, though not actually or in fact" since the mid-1400s. The term "virtual" has been used in the computer sense of "not physically existing but made to appear by software" since 1959.</p>
   <p>In 1938, French avant-garde playwright Antonin Artaud described the illusory nature of characters and objects in the theatre as "la réalité virtuelle" in a collection of essays, Le Théâtre et son double. The English translation of this book, published in 1958 as The Theater and its Double, is the earliest published use of the term "virtual reality". The term "artificial reality", coined by Myron Krueger, has been in use since the 1970s. The term "virtual reality" was first used in a science fiction context in The Judas Mandala, a 1982 novel by Damien Broderick.</p>
-  <div class="gallery">
+  <div class="gallery" style:--num-images={5}>
     <div class="scroll-container">
+      <div class="gallery-progress"></div>
       <div class="slide"><img src="/images/vr/slide-1.jpg" alt="slide 1" /></div>
       <div class="slide"><img src="/images/vr/slide-2.jpg" alt="slide 2" /></div>
       <div class="slide"><img src="/images/vr/slide-3.jpg" alt="slide 3" /></div>
@@ -30,11 +31,24 @@
 <style lang="scss">
   .gallery {
     position: relative;
+
+    .gallery-progress {
+      position: absolute; 
+      top: 0; left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--accent);
+      transform: scaleX(calc(1/var(--num-images)));
+      transform-origin: 0 50%;
+      animation: auto gallery-grow-progress linear;
+      animation-timeline: --gallery-name;
+    }
     .scroll-container {
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       display: flex;
       flex-direction: row;
+      scroll-timeline: --gallery-name inline;
     }
     .slide {
       scroll-snap-align: center;
@@ -44,6 +58,10 @@
         object-fit: cover;
       }
     }
+  }
+
+  @keyframes gallery-grow-progress {
+    to {transform: scaleX(1);}
   }
 
   @keyframes grow-progress {
