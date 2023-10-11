@@ -37,8 +37,8 @@
 
       <h3>Repo's</h3>
       <ul>
-        <li>Starting Repo: <a target="_blank" href="https://github.com" rel="external">Repo</a></li>
-        <li>Final Repo (with animations): <a target="_blank" href="https://github.com" rel="external">Repo</a></li>
+        <li>Starting Repo: <a target="_blank" href="https://github.com/StefGeraets/CodeCation/tree/main" rel="external">Repo</a></li>
+        <li>Final Repo (with animations): <a target="_blank" href="https://github.com/StefGeraets/CodeCation/tree/final" rel="external">Repo</a></li>
       </ul>
     </div>
   </section>
