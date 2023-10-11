@@ -16,6 +16,11 @@
 	--dimmed: rgba(0, 0, 0, 0.75);
 	view-transition-name: none;
 }
+
+::view-transition {
+	pointer-events: none;
+}
+
 html {
 	background-color: var(--background);
 }

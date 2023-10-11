@@ -48,7 +48,7 @@
   <div class="grid">
     {#each filteredPosts as {slug, title, thumbnail, date}}
       <a href="/blog/{slug}" class="card post-{slug}" style:view-transition-name="post-{slug}">
-        <img src={thumbnail} alt="{title} image" style:view-transition-name="img-{slug}" />
+        <img src={thumbnail} alt="{title} image" />
         <span>{new Date(date).toLocaleDateString('nl-nl', {day: '2-digit', month: 'long', year: 'numeric'})}</span>
         <h3>{title}</h3>
       </a>
@@ -130,17 +130,21 @@
     }
   }
 
-  :global(html)::view-transition-group(*):only-child {
-    animation-duration: 3s;
+  :global(:root)::view-transition-group(*) {
+    // animation-duration: 3s;
     mix-blend-mode: normal;
   }
 
-  :global(html)::view-transition-new(*):only-child {
+  :global(:root)::view-transition-new(*):only-child {
     animation-name: fade-in;
   }
 
-  :global(html)::view-transition-old(*):only-child {
+  :global(:root)::view-transition-old(*):only-child {
     animation-name: scale-out;
+  }
+  
+  :global(:root)::view-transition-group(filter) {
+    animation-name: fade-out;
   }
   @keyframes scale-out {
     to {
