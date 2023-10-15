@@ -1,3 +1,4 @@
+<div id="progress"></div>
 <article class="content">
   <h1>Virtual Reality</h1>
   <p>Virtual reality (VR) is a simulated experience that employs pose tracking and 3D near-eye displays to give the user an immersive feel of a virtual world. Applications of virtual reality include entertainment (particularly video games), education (such as medical or military training) and business (such as virtual meetings). Other distinct types of VR-style technology include augmented reality and mixed reality, sometimes referred to as extended reality or XR, although definitions are currently changing due to the nascence of the industry.</p>
@@ -9,6 +10,7 @@
   <p>In 1938, French avant-garde playwright Antonin Artaud described the illusory nature of characters and objects in the theatre as "la réalité virtuelle" in a collection of essays, Le Théâtre et son double. The English translation of this book, published in 1958 as The Theater and its Double, is the earliest published use of the term "virtual reality". The term "artificial reality", coined by Myron Krueger, has been in use since the 1970s. The term "virtual reality" was first used in a science fiction context in The Judas Mandala, a 1982 novel by Damien Broderick.</p>
   <div class="gallery">
     <div class="scroll-container">
+      <div class="gallery-progress"></div>
       <div class="slide"><img src="/images/vr/slide-1.jpg" alt="slide 1" /></div>
       <div class="slide"><img src="/images/vr/slide-2.jpg" alt="slide 2" /></div>
       <div class="slide"><img src="/images/vr/slide-3.jpg" alt="slide 3" /></div>
@@ -29,6 +31,15 @@
 <style lang="scss">
   .gallery {
     position: relative;
+
+    .gallery-progress {
+      position: absolute; 
+      top: 0; left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--accent);
+    }
+
     .scroll-container {
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
@@ -43,5 +54,13 @@
         object-fit: cover;
       }
     }
+  }
+
+  #progress {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 5px;
+    background: var(--accent);
+    z-index: 10;
   }
 </style>
